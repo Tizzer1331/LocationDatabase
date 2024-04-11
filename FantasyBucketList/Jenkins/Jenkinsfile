@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('clean up'){
             steps{
-            sh rm-rf"LocationDatabase"
+            sh' rm-rfLocationDatabase'
             }
         }
         
@@ -17,7 +17,7 @@ pipeline {
         }
         stage('bash Script'){
             steps{
-                sh bash BootScript
+                sh 'bash BootScript'
             }
         }
         // stage("build"){
