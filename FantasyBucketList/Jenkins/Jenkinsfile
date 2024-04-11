@@ -5,7 +5,9 @@ pipeline {
     }
     stages {
         stage('clean up'){
+            steps{
             sh rm-rf"LocationDatabase"
+            }
         }
         
         stage('setup') { 
