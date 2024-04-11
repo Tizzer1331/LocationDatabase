@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+    tools{
+        nodejs "NodeJS"
+    }
+    stages {
+        stage('clean up'){
+            sh rm-rf"LocationDatabase"
+        }
+        
+        stage('setup') { 
+            steps {
+                sh 'npm install' 
+                }
+        }
+        stage('bash Script'){
+            steps{
+                sh bash BootScript
+            }
+        }
+        // stage("build"){
+        //     steps{
+        //         sh git clone 'https://github.com/Tizzer1331/LocationDatabase.git'
+        //     }
+        // }
+    }
+}
