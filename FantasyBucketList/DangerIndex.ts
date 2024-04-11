@@ -14,6 +14,7 @@ async function FindDangerIndex(){
     const inputFindId= prompt("Please enter the ID of the desired Character ")
     const findId= parseInt(inputFindId)
     const foundChar=await Char.findOne({id:findId})
+    
     if (foundChar==null){
         console.log("NO CHAR FOUND")
         return
