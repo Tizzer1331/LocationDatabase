@@ -1,9 +1,13 @@
 import mongoose from "mongoose";
 import {Location, Char} from "./Schemas";
 
-const DB_URL="mongodb://127.0.0.1:27017/bucket-list"
+
+import { env } from "process";
+const mongoUri = env.MONGO_URI || "mongodb://localhost:27017/bucket-list";
+ 
+// const DB_URL="mongodb://127.0.0.1:27017/bucket-list"
 async function main(){
-    await mongoose.connect(DB_URL)
+    await mongoose.connect(mongoUri)
     console.log("connection")
 }
 
@@ -275,4 +279,4 @@ async function databaseCreation(){
 }
 
 main()
-databaseCreation()
+// databaseCreation()

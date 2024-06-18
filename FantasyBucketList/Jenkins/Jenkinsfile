@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('clean up'){
             steps{
-            sh' rm-rfLocationDatabase'
+            sh' rm -rfLocationDatabase'
             }
         }
         
